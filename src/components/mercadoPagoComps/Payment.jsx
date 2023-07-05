@@ -11,10 +11,10 @@ import { apiUrl } from "src/utils/constantes";
 
 function Payment({ price, user }) {
 
-  const createOrder = async (email, name) => {
+  const createOrder = async (email, name, mpID) => {
 
     const address = "";
-    const orderData = { delivery_address: address, email: email, name: name, details: [] };
+    const orderData = { delivery_address: address, email: email, name: name, details: [], mpID: mpID };
 
     sendOrder(orderData);
   };
@@ -80,7 +80,7 @@ function Payment({ price, user }) {
         })
         .then((response) => {
           if(response.status === "approved"){
-            createOrder(response.email, response.name);
+            createOrder(response.email, response.name, response.id);
           }
           setId(response.id);
           handleNextStep();

@@ -1,1 +1,1 @@
-export const apiUrl = "hughes-maslein-laravel-b9wbfxsnb-hughes-maslein-laravel.vercel.app.app/rest/"
+export const apiUrl = "https://hughes-maslein-laravel.vercel.app/rest/"

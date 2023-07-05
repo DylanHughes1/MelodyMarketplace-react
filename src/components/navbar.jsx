@@ -115,7 +115,7 @@ export default function Example() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log(userData);
+    // console.log(userData);
   }, [userData])
 
   useEffect(() => {
@@ -133,7 +133,6 @@ export default function Example() {
   }, []);
 
   const renderLinks = () => {
-    console.log("userData = ", userData)
     if (userData.user === null || userData.singedIn === false) {
       return (
         <ul className="list-none flex">

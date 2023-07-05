@@ -21,25 +21,31 @@ function YoutubeApi() {
     }, []);
 
     return (
-        <div className="youtube-container">
-            <h2 style={{ fontFamily: 'Arial', fontSize: '24px', fontWeight: 'bold' }}>
-                ¡En el centro del escenario! Descubre nuestros increíbles demos de equipos de sonido y guitarras!
+        <div className="flex flex-col items-center container px-5 py-8 mx-auto">
+            <h2 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+                <span>¡En el centro del escenario!</span>
             </h2>
-            {videos && Array.isArray(videos) ? (
-                videos.map((video) => (
-                    <div key={video.id.videoId} style={{ marginBottom: '20px' }}>
-                        <iframe
-                            width="560"
-                            height="315"
-                            src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                            allowFullScreen
-                        ></iframe>
-                    </div>
-                ))
-            ) : (
-                <p>Cargando videos...</p>
-            )}
+            <p className="text-lg mb-4 font-medium title-font">Descubre nuestros increíbles demos de equipos de sonido y guitarras!</p>
+
+            <div className="youtube-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+                {videos && Array.isArray(videos) ? (
+                    videos.map((video) => (
+                        <div key={video.id.videoId} style={{ marginBottom: '20px', flexBasis: 'calc(50% - 10px)' }}>
+                            <iframe
+                                width="560"
+                                height="315"
+                                src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                                allowFullScreen
+                            ></iframe>
+                        </div>
+                    ))
+                ) : (
+                    <p>Cargando videos...</p>
+                )}
+            </div>
         </div>
+
+
     );
 
 

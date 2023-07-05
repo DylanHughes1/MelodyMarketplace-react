@@ -15,7 +15,7 @@ export default function Login() {
     e.preventDefault();
     setErrors(null);
     setMessage('');
-    axios.get('https://hughes-maslein-laravel-nwxi0qdo3-hughes-maslein-laravel.vercel.app/sanctum/csrf-cookie').then(() => {
+    axios.get('hughes-maslein-laravel-b9wbfxsnb-hughes-maslein-laravel.vercel.app/sanctum/csrf-cookie').then(() => {
       const payload = {
         email,
         password
